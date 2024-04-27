@@ -1,0 +1,294 @@
+<style>
+    /* Đặt kích thước tối đa cho select box */
+    #example-select-container {
+        max-height: 150px;
+        /* Đặt kích thước tối đa cho phần tử select */
+        overflow-y: auto;
+        /* Hiển thị thanh cuộn khi cần thiết */
+        position: relative;
+        /* Đặt vị trí tương đối để có thể định dạng thanh cuộn */
+    }
+
+    /* Tạo thanh cuộn */
+    #example-select-container {
+        max-height: 150px;
+        /* Đặt kích thước tối đa cho phần tử select */
+        overflow-y: auto;
+        /* Hiển thị thanh cuộn khi cần thiết */
+        position: relative;
+        /* Đặt vị trí tương đối để có thể định dạng thanh cuộn */
+    }
+
+    /* Ẩn thanh cuộn mặc định của trình duyệt */
+    #example-select-container select {
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* Tạo thanh cuộn */
+    #example-select-container::-webkit-scrollbar {
+        width: 5px;
+        /* Chiều rộng của thanh cuộn */
+    }
+
+    /* Định dạng thanh cuộn */
+    #example-select-container::-webkit-scrollbar-thumb {
+        background-color: #888;
+        /* Màu của thanh cuộn */
+        border-radius: 5px;
+        /* Bo tròn các góc của thanh cuộn */
+    }
+</style>
+<div class="vertical light ">
+    <div class="wrapper">
+        {{> header}}
+        {{> aside-left}}
+        <main role="main" class="main-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+
+                    <div class="col-12">
+                        <h2 class="page-title">Phiếu chấm</h2>
+                        <p>Thêm phiếu chấm</p>
+                        <div class="row">
+                            <!-- simple table -->
+                            <div class="col-md-12 my-4">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <button class="btn btn-primary mb-4"
+                                            style="flex: 1;text-align: right;margin-right: 0;"><i
+                                                class="fe fe-save mr-2"></i>Lưu
+                                            thông
+                                            tin</button>
+                                        <form>
+                                            <div class="form-row">
+                                                <!-- code -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationDefault01">Mã</label>
+                                                    <input type="text" class="form-control" id="validationDefault01"
+                                                        placeholder="First name" value="Mark" required>
+                                                </div>
+                                                <!-- name group product -->
+                                                <div class="col-md-8 mb-3">
+                                                    <label for="validationDefault02">Tên nhóm sản phẩm</label>
+                                                    <input type="text" class="form-control" id="validationDefault02"
+                                                        placeholder="Last name" value="Otto" required>
+                                                </div>
+                                                <!-- active -->
+                                                <div class="custom-control custom-switch col-md-2"
+                                                    style="display: flex; justify-content: center;align-items: center;">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitch1">
+                                                    <label class="custom-control-label block" for="customSwitch1">Áp
+                                                        dụng</label>
+                                                </div>
+                                                <!-- group product -->
+                                                <div class="custom-control custom-switch col-md-10">
+                                                    <label for="validationDefault02">Nhóm sản phẩm</label>
+                                                    <select class="custom-select my-1 form-control"
+                                                        id="inlineFormCustomSelectPref">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                                <!-- note -->
+                                                <div class="col-md-12 mb-3 mt-3">
+                                                    <label for="validationDefault02">Ghi chú</label>
+                                                    <input type="text" class="form-control" id="validationDefault02"
+                                                        placeholder="Last name" required>
+                                                </div>
+                                                <!-- scoreTermDetail -->
+                                                <div class="panel-heading"
+                                                    style="font-size: 18px;padding: 0 10px;margin-top: 20px;">II - Chi
+                                                    tiết
+                                                    phiếu chấm
+                                                </div>
+                                                <div class=" col-md-12 mb-3 mt-3">
+                                                    <div class="panel-body">
+                                                        <table class="table table-bordered table__temptDetail">
+                                                            <thead style="background-color: #F0F0F0;">
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">Nội dung</th>
+                                                                    <th scope="col">Chấm điểm</th>
+                                                                    <th scope="col">Điểm tối đa</th>
+                                                                    <th scope="col">Điều kiện xếp hạng</th>
+                                                                    <th scope="col">Viện dẫn</th>
+                                                                    <th scope="col">Ghi chú</th>
+                                                                    <th scope="col"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="education_fields">
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Mark</td>
+                                                                    <td
+                                                                        style="display: flex;justify-content: center; align-items: center;">
+                                                                        <div class="custom-control custom-switch"
+                                                                            style="display: flex; justify-content: center;align-items: center;transform: translateY(-50%);">
+                                                                            <input type="checkbox"
+                                                                                class="custom-control-input"
+                                                                                id="customSwitch2">
+                                                                            <label class="custom-control-label block"
+                                                                                for="customSwitch2"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input value="50" type="number"
+                                                                            class="form-control"
+                                                                            style="width: 100px;" />
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <select class="form-control"
+                                                                                id="example-select"
+                                                                                style="transform: translateY(10px);max-width: 200px;"
+                                                                                data-target="#navbar-example2"
+                                                                                data-offset="0">
+                                                                                <option selected>Không xác định</option>
+                                                                                <option>1</option>
+                                                                                <option>2</option>
+                                                                                <option>3</option>
+                                                                                <option>4</option>
+                                                                                <option>5</option>
+                                                                                <!-- Thêm nhiều option khác nếu cần -->
+                                                                            </select>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <select class="form-control"
+                                                                                style="transform: translateY(10px);max-width: 200px;max-height: 200px;overflow-y: hidden;"
+                                                                                data-target="#navbar-example2"
+                                                                                data-offset="0">
+                                                                                <option selected>Không xác định</option>
+                                                                                <option>Lorem ipsum dolor sit amet
+                                                                                    consectetur adipisicing elit.
+                                                                                    Exercitationem,
+                                                                                    debitis corporis est officia
+                                                                                    voluptatum laborum obcaecati
+                                                                                    repellendus sed
+                                                                                    dicta et tenetur ducimus quam ab
+                                                                                    commodi molestiae rem culpa quasi a!
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" class="form-control"
+                                                                            style="width: 100px;" />
+                                                                    </td>
+                                                                    <td>
+                                                                        <i onclick={}
+                                                                            class="fe fe-trash-2 icon__scoreTempDetail"
+                                                                            style="color: white;cursor: pointer;background-color: red;padding: 4px 4px; border-radius: 50%;"></i>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td colspan="8"
+                                                                        style="text-align: center;color: white;">
+                                                                        <button class="btn btn-primary" type="button"
+                                                                            onclick="education_fields();"> <span
+                                                                                class="glyphicon glyphicon-plus"
+                                                                                aria-hidden="true"></span>Thêm</button>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tfoot>
+                                                        </table>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> <!-- simple table -->
+                            <!-- Bordered table -->
+                        </div> <!-- end section -->
+
+                    </div> <!-- .col-12 -->
+
+                </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
+        </main> <!-- main -->
+    </div>
+</div>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+
+    var room = 1;
+    function education_fields() {
+        room++;
+        var objTo = document.getElementById('education_fields')
+        var divtest = document.createElement("tr");
+        divtest.setAttribute("class", "form-group removeclass" + room);
+        var rdiv = 'removeclass' + room;
+        const tableBody = () => {
+            return `<tr>
+                                  <th scope="row">1</th>
+                                  <td>Mark</td>
+                                  <td style="display: flex;justify-content: center; align-items: center;">
+                                    <div class="custom-control custom-switch"
+                                      style="display: flex; justify-content: center;align-items: center;transform: translateY(-50%);">
+                                      <input type="checkbox" class="custom-control-input" id="customSwitch${room + 1}">
+                                      <label class="custom-control-label block" for="customSwitch${room + 1}"></label>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <input value="50" type="number" class="form-control" style="width: 100px;" />
+                                  </td>
+                                  <td>
+                                    <div class="form-group">
+                                      <select class="form-control" id="example-select"
+                                        style="transform: translateY(10px);max-width: 200px;"
+                                        data-target="#navbar-example2" data-offset="0">
+                                        <option selected>Không xác định</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <!-- Thêm nhiều option khác nếu cần -->
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="form-group">
+                                      <select class="form-control"
+                                        style="transform: translateY(10px);max-width: 200px;max-height: 200px;overflow-y: hidden;"
+                                        data-target="#navbar-example2" data-offset="0">
+                                        <option selected>Không xác định</option>
+                                        <option>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
+                                          debitis corporis est officia voluptatum laborum obcaecati repellendus sed
+                                          dicta et tenetur ducimus quam ab commodi molestiae rem culpa quasi a!</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <input type="text" class="form-control" style="width: 100px;" />
+                                  </td>
+                                  <td>
+                                    <i onclick="remove_education_fields(${room});" class="fe fe-trash-2 icon__scoreTempDetail"
+                                      style="color: white;cursor: pointer;background-color: red;padding: 4px 4px; border-radius: 50%;"></i>
+                                  </td>
+                                </tr>`
+        }
+        divtest.innerHTML = tableBody();
+        objTo.appendChild(divtest)
+    }
+    function remove_education_fields(rid) {
+        console.log(rid)
+        $('.removeclass' + rid).remove();
+    }
+</script>

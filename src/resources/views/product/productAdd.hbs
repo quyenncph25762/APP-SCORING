@@ -1,0 +1,134 @@
+<div class="vertical light">
+    <div class="wrapper">
+        {{> header}}
+        {{> aside-left}}
+        <main role="main" class="main-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+
+                    <div class="col-12">
+                        <h2 class="mb-2 page-title">Sản phẩm</h2>
+                        <p class="card-text">Thêm sản phẩm </p>
+                        <div class="row my-4">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <div class="file-upload">
+                                                    <!-- image -->
+                                                    <div class="image-upload-wrap">
+                                                        <input class="file-upload-input" type='file'
+                                                            onchange="readURL(this);" accept="image/*" />
+                                                        <div class="drag-text">
+                                                            <img style="width: 100%; height: 100%; object-fit: cover;"
+                                                                src="https://csdl.ocopthaibinh.vn/Common/Images/default-contact-image.jpg"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="file-upload-content">
+                                                        <img class="file-upload-image" src="#" alt="your image" />
+                                                        <div class="image-title-wrap">
+                                                            <button type="button" onclick="removeUpload()"
+                                                                class="remove-image">Remove <span
+                                                                    class="image-title">Uploaded Image</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="" style="padding: 0 20px;">
+                                                    <div class="box_menu-productAdd">
+                                                        <i class="fe fe-menu" style="font-size: 18px;"></i>
+                                                        <p style="font-size: 14px;">
+                                                            Thông tin chung</p>
+                                                    </div>
+                                                    <div class="box_menu-productAdd">
+                                                        <i class="fe fe-archive" style="font-size: 18px;"></i>
+                                                        <p style="font-size: 14px;">Thông tin hồ sơ</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <!-- Code -->
+                                                        <div class="col-md-4 mb-3">
+                                                            <label for="validationDefault01">Mã</label>
+                                                            <input type="text" class="form-control"
+                                                                id="validationDefault01" placeholder="First name"
+                                                                value="Mark" required>
+                                                        </div>
+                                                        <!-- Ten nhom san pham -->
+                                                        <div class="col-md-8 mb-3">
+                                                            <label for="validationDefault02">Tên nhóm sản phẩm</label>
+                                                            <input type="text" class="form-control"
+                                                                id="validationDefault02" placeholder="Last name"
+                                                                value="Otto" required>
+                                                        </div>
+                                                        <!-- mo ta san pham -->
+                                                        <div class="col-md-12 mb-3">
+                                                            <label for="validationDefault02">Mô tả sản phẩm</label>
+                                                            <textarea name="" id="" class="form-control"
+                                                                cols="10"></textarea>
+                                                        </div>
+                                                        <!-- chu the -->
+                                                        <div class="custom-control custom-switch col-md-6 mb-3">
+                                                            <label for="validationDefault02">Chủ thể</label>
+                                                            <select class="custom-select my-1 form-control"
+                                                                id="inlineFormCustomSelectPref">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- nhom san pham -->
+                                                        <div class="custom-control custom-switch col-md-6 mb-3">
+                                                            <label for="validationDefault02">Nhóm sản phẩm</label>
+                                                            <select class="custom-select my-1 form-control"
+                                                                id="inlineFormCustomSelectPref">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- nam danh gia -->
+                                                        <div class="custom-control custom-switch col-md-4 mb-3">
+                                                            <label for="validationDefault02">Năm đánh giá</label>
+                                                            <select class="custom-select my-1 form-control"
+                                                                id="inlineFormCustomSelectPref">
+                                                                <option selected>2024</option>
+                                                                <option value="1">2021</option>
+                                                                <option value="2">2020</option>
+                                                                <option value="3">2019</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- note -->
+                                                        <div class="col-md-8 mb-3">
+                                                            <label for="validationDefault02">Ghi chú</label>
+                                                            <input type="text" class="form-control"
+                                                                id="validationDefault02" required>
+                                                        </div>
+                                                        <div class="w-100">
+                                                            <button class="btn btn-primary"
+                                                                style="float: right;">ADD</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
+        </main> <!-- main -->
+    </div>
+</div>
