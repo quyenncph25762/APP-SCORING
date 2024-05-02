@@ -5,10 +5,7 @@
         <main role="main" class="main-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-
                     <div class="col-12">
-                        <h2 class="mb-2 page-title">Nhóm sản phẩm</h2>
-                        <p class="card-text">Quản lí nhóm sản phẩm. </p>
                         <div class="row my-4">
                             <!-- Small table -->
                             <div class="col-md-12">
@@ -36,38 +33,35 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body" class="width: 100%">
-                                                            <form>
+                                                            <form method="POST" action="">
                                                                 <div class="form-row">
+                                                                    {{!-- code --}}
                                                                     <div class="col-md-4 mb-3">
-                                                                        <label for="validationDefault01">Mã</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault01"
-                                                                            placeholder="First name" value="Mark"
-                                                                            required>
+                                                                        <label for="code">Mã</label>
+                                                                        <input name="code" type="text"
+                                                                            class="form-control" id="code" required>
                                                                     </div>
+                                                                    {{!-- title --}}
                                                                     <div class="col-md-5 mb-3">
-                                                                        <label for="validationDefault02">Tên nhóm
+                                                                        <label for="title">Tên nhóm
                                                                             sản phẩm</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault02"
-                                                                            placeholder="Last name" value="Otto"
-                                                                            required>
+                                                                        <input name="titlt" type="text"
+                                                                            class="form-control" id="title" required>
                                                                     </div>
+                                                                    {{!-- status --}}
                                                                     <div class="custom-control custom-switch col-md-3"
                                                                         style="display: flex; justify-content: center;align-items: center;">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input"
-                                                                            id="customSwitch1">
+                                                                        <input name="status" type="checkbox"
+                                                                            class="custom-control-input" id="status">
                                                                         <label class="custom-control-label block"
-                                                                            for="customSwitch1">Áp dụng</label>
+                                                                            for="status">Áp dụng</label>
                                                                     </div>
+                                                                    {{!-- note --}}
                                                                     <div class="col-md-12 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Ghi
+                                                                        <label for="note">Ghi
                                                                             chú</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault02"
-                                                                            placeholder="Last name" value="Otto"
-                                                                            required>
+                                                                        <input name="note" type="text"
+                                                                            class="form-control" id="note" required>
                                                                     </div>
                                                                 </div>
                                                             </form>
@@ -75,8 +69,9 @@
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
+                                                            <button onclick={handleSubmitProductGroup()}
+                                                                class="btn btn-primary">Thêm nhóm sản
+                                                                phẩm</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -123,3 +118,25 @@
         </main> <!-- main -->
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script>
+    function handleSubmitProductGroup() {
+        var code = document.getElementById('code').value
+        var title = document.getElementById('title').value
+        var note = document.getElementById('note').value
+        var status = document.getElementById('status').checked
+        if (code.trim() === "" || title.trim() === "" || note.trim() === "") {
+            alert("Giá trị không được để trống")
+            return
+        }
+        const formData = new FormData();
+        formData.append('code', code)
+        formData.append('title', title)
+        formData.append('note', note)
+        formData.append('status', status)
+        fetch('/groupProduct/create', {
+            method: "POST",
+            body: formData
+        })
+    }
+</script>

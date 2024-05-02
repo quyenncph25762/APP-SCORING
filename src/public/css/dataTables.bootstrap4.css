@@ -574,3 +574,11 @@ select {
   width: 10px;
   height: 10px;
 }
+
+.subHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-top: 1px #ccc solid;
+  padding: 16px 0;
+}
