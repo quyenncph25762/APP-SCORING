@@ -1,15 +1,14 @@
-<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
-    rel="stylesheet">
-<div class="vertical light">
+<div class="vertical light ">
     <div class="wrapper">
         {{> header}}
         {{> aside-left}}
         <main role="main" class="main-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
+
                     <div class="col-12">
-                        <h2 class="mb-2 page-title">Hồ sơ sản phẩm</h2>
-                        <p class="card-text">Danh sách hồ sơ sản phẩm. </p>
+                        <h2 class="mb-2 page-title">Sản phẩm</h2>
+                        <p class="card-text">Khôi phục sản phẩm. </p>
                         <div class="row my-4">
                             <!-- Small table -->
                             <div class="col-md-12">
@@ -17,36 +16,17 @@
                                     <div class="card-body">
                                         <!-- table -->
                                         <div class="table_header">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <p>Năm đánh giá</p>
-                                                    <select class="form-control" name="" id="">
-                                                        <option value="" selected>Tất cả</option>
-                                                        <option value="">2001</option>
-                                                        <option value="">2002</option>
-                                                        <option value="">2003</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <p>Nhóm sản phẩm</p>
-                                                    <select class="form-control" name="" id="">
-                                                        <option value="" selected>Tất cả</option>
-                                                        <option value="">Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành phần từ
-                                                            Thảo
-                                                            dược</option>
-                                                        <option value="">148 - Nhóm 06. Bộ sản phẩm: Chế biến từ gạo,
-                                                            ngũ
-                                                            cốc</option>
-                                                    </select>
-                                                </div>
-                                            </div>
                                             <div class="box__input-headerTable">
                                                 <input type="text" class="form-control input-headerTable"
                                                     placeholder="Tìm kiếm ..">
                                                 <span class="fe fe-14 fe-search iconSearch_headerTable"></span>
                                             </div>
+                                            <div class="">
+                                                <button class="btn btn-danger">Xóa tất cả</button>
+                                                <button class="btn btn-primary">Khôi phục tất cả</button>
+                                            </div>
                                         </div>
-                                        <table class="table datatables table table-bordered">
+                                        <table class="table datatables table table-bordered table-hover table-striped">
                                             <thead style="background-color: #F0F0F0;">
                                                 <tr>
                                                     <th>
@@ -55,14 +35,14 @@
                                                         </div>
                                                     </th>
                                                     <th></th>
+                                                    <th></th>
                                                     <th style="min-width: 400px;">
                                                         Name</th>
-                                                    <th>Nhóm sản phẩm</th>
-                                                    <th>Xếp hạng OCOP</th>
+                                                    <th style="max-width: 60px;">Nhóm sản phẩm</th>
                                                     <th>Năm đánh giá</th>
-                                                    <th>Chủ thể</th>
-                                                    <th>Ghi chú</th>
+                                                    <th>Actions</th>
                                                 </tr>
+
                                             </thead>
                                             <tbody>
                                                 <tr>
@@ -73,6 +53,9 @@
                                                             </div>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div class="approved">Đã duyệt</div>
+                                                    </td>
                                                     <td><img style="width: 50px; height: 50px;object-fit: cover;"
                                                             src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
                                                             alt=""></td>
@@ -162,13 +145,13 @@
                                                         </ul>
                                                     </td>
                                                     <!-- product group -->
-                                                    <td>Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
+                                                    <td style="max-width: 100px;">Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
                                                         phần từ Thảo dược</td>
-                                                    <td></td>
                                                     <!-- nam thanh lap -->
                                                     <td>2021</td>
-                                                    <td>CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB GROUP</td>
                                                     <td>
+                                                        <i class="fe fe-edit-3 icon__table icon__table-edit"></i>
+                                                        <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -179,111 +162,8 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img style="width: 50px; height: 50px;object-fit: cover;"
-                                                            src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
-                                                            alt=""></td>
                                                     <td>
-                                                        <ul style="list-style-type: none;font-weight: 600;">
-                                                            <!-- name product -->
-                                                            <li data-toggle="modal" data-target="#exampleModal"></li>
-                                                            <p class="nameProduct">
-                                                                DƯỠNG DA 123
-                                                                PLUS +</p>
-                                                            </li>
-                                                            <!-- modal -->
-                                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                                role="dialog" aria-labelledby="exampleModalLabel"
-                                                                aria-hidden="true">
-                                                                <div class="modal-dialog modal__size" role="document">
-                                                                    <div class="modal-content model__content">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title"
-                                                                                id="exampleModalLabel">Thêm mới
-                                                                            </h5>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body" class="width: 100%">
-                                                                            <form>
-                                                                                <div class="form-row">
-                                                                                    <div class="col-md-4 mb-3">
-                                                                                        <label
-                                                                                            for="validationDefault01">Mã</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault01"
-                                                                                            placeholder="First name"
-                                                                                            value="Mark" required>
-                                                                                    </div>
-                                                                                    <div class="col-md-5 mb-3">
-                                                                                        <label
-                                                                                            for="validationDefault02">Tên
-                                                                                            nhóm
-                                                                                            sản phẩm</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault02"
-                                                                                            placeholder="Last name"
-                                                                                            value="Otto" required>
-                                                                                    </div>
-                                                                                    <div class="custom-control custom-switch col-md-3"
-                                                                                        style="display: flex; justify-content: center;align-items: center;">
-                                                                                        <input type="checkbox"
-                                                                                            class="custom-control-input"
-                                                                                            id="customSwitch1">
-                                                                                        <label
-                                                                                            class="custom-control-label block"
-                                                                                            for="customSwitch1">Áp
-                                                                                            dụng</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-12 mb-3 mt-3">
-                                                                                        <label
-                                                                                            for="validationDefault02">Ghi
-                                                                                            chú</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault02"
-                                                                                            placeholder="Last name"
-                                                                                            value="Otto" required>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary"
-                                                                                data-dismiss="modal">Close</button>
-                                                                            <button type="button"
-                                                                                class="btn btn-primary">Save
-                                                                                changes</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- name company -->
-                                                            <li style="opacity: 0.6;">CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB
-                                                                GROUP</li>
-                                                        </ul>
-                                                    </td>
-                                                    <!-- product group -->
-                                                    <td>Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
-                                                        phần từ Thảo dược</td>
-                                                    <td></td>
-                                                    <!-- nam thanh lap -->
-                                                    <td>2021</td>
-                                                    <td>CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB GROUP</td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox" class="check">
-                                                            </div>
-                                                        </div>
+                                                        <div class="approved">Đã duyệt</div>
                                                     </td>
                                                     <td><img style="width: 50px; height: 50px;object-fit: cover;"
                                                             src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
@@ -374,13 +254,13 @@
                                                         </ul>
                                                     </td>
                                                     <!-- product group -->
-                                                    <td>Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
+                                                    <td style="max-width: 100px;">Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
                                                         phần từ Thảo dược</td>
-                                                    <td></td>
                                                     <!-- nam thanh lap -->
                                                     <td>2021</td>
-                                                    <td>CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB GROUP</td>
                                                     <td>
+                                                        <i class="fe fe-edit-3 icon__table icon__table-edit"></i>
+                                                        <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -390,13 +270,13 @@
                             </div> <!-- simple table -->
                         </div> <!-- end section -->
                     </div> <!-- .col-12 -->
+
                 </div> <!-- .row -->
             </div> <!-- .container-fluid -->
         </main> <!-- main -->
     </div>
 </div>
-
-
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
 <script>

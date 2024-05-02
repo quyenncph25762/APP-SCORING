@@ -3,5 +3,7 @@ const GroupProductControllers = require("../app/controllers/admin/GroupProductCo
 const router = express.Router()
 
 router.get("/", GroupProductControllers.index)
+// xoa mem
+router.get("/trash", GroupProductControllers.deleteGroupProductToTrash)
 
 module.exports = router

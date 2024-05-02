@@ -3,5 +3,9 @@ const ScoreTempControllers = require("../app/controllers/admin/ScoreTempControll
 const router = express.Router()
 
 router.get("/", ScoreTempControllers.index)
+// add
 router.get("/add", ScoreTempControllers.add)
+// xoa mem
+router.get("/trash", ScoreTempControllers.deleteScoreTempToTrash)
+
 module.exports = router

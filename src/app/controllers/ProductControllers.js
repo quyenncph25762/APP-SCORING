@@ -5,6 +5,9 @@ class ProductControllers {
     addProduct(req, res, next) {
         res.render("product/productAdd")
     }
+    deleteProductToTrash(req, res, next) {
+        res.render("product/trash")
+    }
 }
 
 module.exports = new ProductControllers

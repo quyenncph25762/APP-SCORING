@@ -290,6 +290,13 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
   margin: 0 8px;
 }
 
+.icon__table-large {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 16px;
+
+}
+
 .icon__table-success {
   color: rgb(13, 187, 13);
 }
@@ -308,6 +315,8 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 .icon__table-trash {
   color: red;
   cursor: context-menu;
+  padding: 4px;
+  cursor: pointer;
 }
 
 
