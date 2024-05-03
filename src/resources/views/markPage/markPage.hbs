@@ -29,7 +29,7 @@
                                             <thead style="background-color: #F0F0F0;">
                                                 <tr>
                                                     <th></th>
-                                                    <th style="min-width: 400px;">
+                                                    <th style="min-width: 300px;">
                                                         Name</th>
                                                     <th style="max-width: 60px;">Đối tượng</th>
                                                     <th>Trạng thái</th>
@@ -49,14 +49,15 @@
                                                         <ul style="list-style-type: none;font-weight: 600;padding: 0;">
                                                             <!-- name product -->
                                                             <li data-toggle="modal" data-target="#exampleModal"></li>
-                                                            <p class="nameProduct">101: Thành Phố Từ Sơn , tỉnh Bắc Ninh
+                                                            <p class="nameProduct" data-toggle="modal"
+                                                                data-target="#exampleModal2">101: Thành Phố Từ Sơn ,
+                                                                tỉnh Bắc Ninh
                                                             </p>
                                                             </li>
-
                                                         </ul>
                                                     </td>
                                                     <!-- product group -->
-                                                    <td style="max-width: 150px;">Thành Phố Từ Sơn , Tỉnh Bắc Ninh</td>
+                                                    <td style="max-width: 150px;">Xã nông thôn mới</td>
                                                     <!-- nam thanh lap -->
                                                     <td style="font-weight: 600;color: green;">Đạt</td>
                                                     <td>16/10/2003</td>
@@ -88,78 +89,7 @@
                                             </tbody>
                                         </table>
                                         <!-- table -->
-                                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal__size" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">
-                                                            <strong>Kết quả hội đồng chấm:
-                                                                <span style="text-transform: uppercase;">Kem dưỡng
-                                                                    da
-                                                                    123 PLUS+</span>
-                                                            </strong>
-                                                        </h5>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <table class="table table-bordered table-striped table-hover">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>STT</th>
-                                                                    <th>Thành viên</th>
-                                                                    <th>Điểm</th>
-                                                                    <th>Xếp hạng</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>
-                                                                        <strong>Nguyễn Đức Minh</strong>
-                                                                        <p>trưởng phòng - Chi cục Tiêu chuẩn ĐLCL, Sở
-                                                                            KH&CN</p>
-                                                                    </td>
-                                                                    <td style="color: red;">55</td>
-                                                                    <td>
-                                                                        <div class="d-flex">
-                                                                            <span class="fa fa-star checked"></span>
-                                                                            <span class="fa fa-star checked"></span>
-                                                                            <span class="fa fa-star checked"></span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="d-flex">
-                                                                            <a style="text-decoration: none;"
-                                                                                href="./editOCOP.html">
-                                                                                <i class="fe fe-edit-3 icon__table"
-                                                                                    style="color: rgb(214, 205, 22);">
-                                                                                </i>
-                                                                            </a>
-
-                                                                            <i class="fe fe-download icon__table"
-                                                                                style="color: rgb(3, 163, 212)">
-                                                                            </i>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-success"
-                                                            style="color: white;">Cập nhật phiếu
-                                                            chấm</button>
-                                                        <button type="button" class="btn btn-primary"
-                                                            data-dismiss="modal">Đóng</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {{> modalMarkPage}}
                                         <!-- table -->
                                     </div>
                                 </div>

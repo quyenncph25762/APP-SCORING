@@ -1,6 +1,6 @@
 const express = require("express")
-const MarkPageControllers = require("../app/controllers/MarkPageControllers")
 const router = express.Router()
+const MarkPageControllers = require("../app/controllers/MarkPageControllers")
 
 router.get("/", MarkPageControllers.index)
 // update
