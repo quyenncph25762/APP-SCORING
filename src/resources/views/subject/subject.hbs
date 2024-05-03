@@ -16,109 +16,14 @@
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button class="btn btn-primary" data-toggle="modal"
                                                     data-target="#exampleModal">ADD</button>
-                                                <a style="text-decoration: none;" href="/subject/trash"><i
-                                                        class="fe fe-trash-2 icon__table-large icon__table-trash"></i></a>
-                                                {{!-- modal --}}
+                                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                    title="Xem thùng rác">
+                                                    <a style="text-decoration: none;" href="/subject/trash"><i
+                                                            class="fe fe-trash-2 icon__table-large icon__table-trash"></i></a>
+                                                </span>
                                             </div>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal__size" role="document">
-                                                    <div class="modal-content model__content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Thêm mới
-                                                                chủ thể</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body" class="width: 100%">
-                                                            <form>
-                                                                <div class="form-row">
-                                                                    <!-- chu thể -->
-                                                                    <div class="col-md-8 mb-3">
-                                                                        <label for="validationDefault01">Chủ
-                                                                            thể</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault01" required>
-                                                                    </div>
-                                                                    <!-- người đại diện -->
-                                                                    <div class="col-md-4 mb-3">
-                                                                        <label for="validationDefault02">Người đại
-                                                                            diện</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault02" required>
-                                                                    </div>
-                                                                    <!-- điện thoại -->
-                                                                    <div class="col-md-4 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Điện
-                                                                            thoại</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault02" required>
-                                                                    </div>
-                                                                    <!-- Điện thoại khác -->
-                                                                    <div class="col-md-4 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Điện
-                                                                            thoại khác</label>
-                                                                        <input type="number" class="form-control"
-                                                                            id="validationDefault02" required>
-                                                                    </div>
-                                                                    <div class="col-md-4 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Email</label>
-                                                                        <input type="email" class="form-control"
-                                                                            id="validationDefault02" required>
-                                                                    </div>
-                                                                    <!-- tỉnh -->
-                                                                    <div class="col-md-4 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Tỉnh /
-                                                                            Thành phố</label>
-                                                                        <select class="form-control"
-                                                                            id="validationDefault02" name="">
-                                                                            <option value="" selected>--</option>
-                                                                            <option value="">Hoàng Mai</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-md-4 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Quận /
-                                                                            Huyện</label>
-                                                                        <select class="form-control"
-                                                                            id="validationDefault02" name="">
-                                                                            <option value="" selected>--</option>
-                                                                            <option value="">alo 123</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-md-4 mb-3 mt-3">
-                                                                        <label for="validationDefault02">Xã /
-                                                                            Phường</label>
-                                                                        <select class="form-control"
-                                                                            id="validationDefault02" name="">
-                                                                            <option value="" selected>--</option>
-                                                                            <option value="">Tân Hồng</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-md-12 mb-3">
-                                                                        <label for="validationDefault01">Address</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault01" required>
-                                                                    </div>
-                                                                    <div class="col-md-12 mb-3">
-                                                                        <label for="validationDefault01">Ghi
-                                                                            chú</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="validationDefault01" required>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {{!-- modal --}}
+                                            {{> modalSubject}}
                                             <div class="box__input-headerTable">
                                                 <input type="text" class="form-control input-headerTable"
                                                     placeholder="Tìm kiếm ..">
@@ -131,6 +36,7 @@
 
                                                     <th>Chủ thể</th>
                                                     <th>Điện thoại</th>
+                                                    <th>Đối tượng</th>
                                                     <th>Address</th>
                                                     <th>Actions</th>
                                                 </tr>
@@ -139,11 +45,20 @@
                                                 <tr>
                                                     <td>Mark Zukerberg</td>
                                                     <td>(478) 446-9234</td>
+                                                    <th style="font-weight: 600;color:#777">Đối với xã nông thôn mới
+                                                    </th>
                                                     <td>Lô CN4, cụm Công nghiệp Minh Lãng, xã Minh Lãng, huyện Vũ Thư,
                                                         tỉnh Thái Bình</td>
                                                     <td>
-                                                        <i class="fe fe-edit-3 icon__table icon__table-edit"></i>
-                                                        <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chỉnh sửa">
+                                                            <i class="fe fe-edit-3 icon__table icon__table-edit"
+                                                                data-toggle="modal" data-target="#exampleModal"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chuyển vào thùng rác">
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        </span>
                                                     </td>
                                                 </tr>
                                             </tbody>
