@@ -13,8 +13,12 @@
                                     <div class="card-body">
                                         <!-- table -->
                                         <div class="table_header">
-                                            <a style="text-decoration: none;" href="/markPage/trash"><i
-                                                    class="fe fe-trash-2 icon__table-large icon__table-trash"></i></a>
+                                            <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                title="Xem thùng rác">
+                                                <a style="text-decoration: none;" href="/markPage/trash">
+                                                    <i class="fe fe-trash-2 icon__table-large icon__table-trash"></i>
+                                                </a>
+                                            </span>
                                             <div class="box__input-headerTable" style="width: 100%;">
                                                 <input type="text" class="form-control input-headerTable w-100"
                                                     placeholder="Tìm kiếm ..">
@@ -25,12 +29,10 @@
                                             <thead style="background-color: #F0F0F0;">
                                                 <tr>
                                                     <th></th>
-                                                    <th></th>
                                                     <th style="min-width: 400px;">
                                                         Name</th>
-                                                    <th style="max-width: 60px;">Nhóm sản phẩm</th>
-                                                    <th>Tổng điểm</th>
-                                                    <th>Xếp hạng</th>
+                                                    <th style="max-width: 60px;">Đối tượng</th>
+                                                    <th>Trạng thái</th>
                                                     <th>Ngày chấm</th>
                                                     <th>Năm đánh giá</th>
                                                     <th>Actions</th>
@@ -42,44 +44,45 @@
                                                     <td>
                                                         <div class="approved">Lưu nháp</div>
                                                     </td>
-                                                    <td><img style="width: 50px; height: 50px;object-fit: cover;"
-                                                            src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
-                                                            alt=""></td>
+
                                                     <td>
                                                         <ul style="list-style-type: none;font-weight: 600;padding: 0;">
                                                             <!-- name product -->
                                                             <li data-toggle="modal" data-target="#exampleModal"></li>
-                                                            <p class="nameProduct">
-                                                                DƯỠNG DA 123
-                                                                PLUS +</p>
+                                                            <p class="nameProduct">101: Thành Phố Từ Sơn , tỉnh Bắc Ninh
+                                                            </p>
                                                             </li>
-                                                            <!-- name company -->
-                                                            <li style="opacity: 0.6;">CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB
-                                                                GROUP</li>
+
                                                         </ul>
                                                     </td>
                                                     <!-- product group -->
-                                                    <td style="max-width: 150px;">Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
-                                                        phần từ Thảo dược</td>
+                                                    <td style="max-width: 150px;">Thành Phố Từ Sơn , Tỉnh Bắc Ninh</td>
                                                     <!-- nam thanh lap -->
-                                                    <td>53</td>
-                                                    <td>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                        <span class="fa fa-star checked"></span>
-                                                    </td>
+                                                    <td style="font-weight: 600;color: green;">Đạt</td>
                                                     <td>16/10/2003</td>
-                                                    <td>2024</td>
+                                                    <td style="font-weight: 600;">2024</td>
                                                     <td>
-                                                        <a style="text-decoration: none;" href="/markPage/update/1">
-                                                            <i class="fe fe-edit-3 icon__table icon__table-edit">
-                                                            </i>
-                                                        </a>
-                                                        <i
-                                                            class="fe fe-check-circle icon__table icon__table-success"></i>
-                                                        <i class="fe fe-eye icon__table icon__table-eye"
-                                                            data-toggle="modal" data-target="#exampleModal2"></i>
-                                                        <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chỉnh sửa">
+                                                            <a style="text-decoration: none;" href="/markPage/update/1">
+                                                                <i class="fe fe-edit-3 icon__table icon__table-edit">
+                                                                </i>
+                                                            </a>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Xác nhận">
+                                                            <i
+                                                                class="fe fe-check-circle icon__table icon__table-success"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Xem chi tiết">
+                                                            <i class="fe fe-eye icon__table icon__table-eye"
+                                                                data-toggle="modal" data-target="#exampleModal2"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chuyển vào thùng rác">
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        </span>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -163,8 +166,6 @@
                             </div> <!-- simple table -->
                         </div> <!-- end section -->
                     </div> <!-- .col-12 -->
-
-
                 </div> <!-- .row -->
             </div> <!-- .container-fluid -->
         </main> <!-- main -->

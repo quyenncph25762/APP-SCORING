@@ -1,3 +1,6 @@
+<style>
+
+</style>
 <div class="vertical light ">
     <div class="wrapper">
         {{> header}}
@@ -19,8 +22,11 @@
                                                     data-target="#exampleModal">
                                                     <a href="/scoreTemp/add" style="color: white;">ADD</a>
                                                 </button>
-                                                <a style="text-decoration: none;" href="/scoreTemp/trash"><i
-                                                        class="fe fe-trash-2 icon__table-large icon__table-trash"></i></a>
+                                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                    title="Xem thùng rác">
+                                                    <a style="text-decoration: none;" href="/scoreTemp/trash"><i
+                                                            class="fe fe-trash-2 icon__table-large icon__table-trash"></i></a>
+                                                </span>
                                             </div>
                                             <div class="box__input-headerTable">
                                                 <input type="text" class="form-control input-headerTable"
@@ -33,7 +39,7 @@
                                                 <tr>
                                                     <th>Active</th>
                                                     <th>Name</th>
-                                                    <th>Nhóm sản phẩm</th>
+                                                    <th>Tiêu chí</th>
                                                     <th>Default</th>
                                                     <th>Actions</th>
                                                 </tr>
@@ -47,11 +53,27 @@
                                                     <td>Nhóm 03: Bộ sản phẩm: Gạo, ngũ cốc, hạt sơ chế khác</td>
                                                     <td></td>
                                                     <td>
-                                                        <i class="fe fe-copy icon__table"></i>
-                                                        <i class="fe fe-edit-3 icon__table icon__table-edit"></i>
-                                                        <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Nhân bản">
+                                                            <i class="fe fe-copy icon__table"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chỉnh sửa">
+                                                            <i class="fe fe-edit-3 icon__table icon__table-edit"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Xem chi tiết">
+                                                            <i data-toggle="modal" data-target="#exampleModalLong"
+                                                                class="fe fe-eye icon__table icon__table-eye"
+                                                                style="color: green;"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chuyển vào thùng rác">
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        </span>
                                                     </td>
                                                 </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -63,5 +85,247 @@
                 </div> <!-- .row -->
             </div> <!-- .container-fluid -->
         </main> <!-- main -->
+        {{!-- xem modal --}}
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal__size" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Phiếu
+                            chấm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{!-- body --}}
+                    <div class="modal-body ">
+                        <div class="col-12">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <table class="table table-bordered table-striped table-hover table_updateScoreTemp">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="min-width: 592px;max-width: 592px;">
+                                                </th>
+                                                <th scope="col" class="w-100">
+                                                </th>
+                                                <th scope="col" class="w-60">
+                                                </th>
+                                                <th scope="col" class="w-40">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;">
+                                                    A ) HỒ SƠ MINH CHỨNG ĐỂ ĐÁNH GIÁ
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            {{!-- I) Đối với xã nông thôn mới --}}
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333">
+                                                    I) Đối với xã nông thôn mới</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            {{!-- 1. Tiêu chí số 01 về Quy hoạch: --}}
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;">
+                                                    1) Tiêu chí số 01 về quy hoạch</td>
+                                                <td></td>
+                                                <td style="text-align: center;cursor: pointer;">
+                                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                        title="File đính kèm">
+                                                        <i class="fe fe-file-text icon__file" data-toggle="modal"
+                                                            data-target="#exampleModal"></i>
+                                                    </span>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;opacity: 0.6;">
+                                                    <label for="cau1" style="cursor: pointer;">
+                                                        Có quy hoạch xây dựng xã hội phê duyệt phù hợp với định hướng
+                                                        phát triển kinh tế - xã hội của giai đoạn 2021-2025
+                                                    </label>
+                                                </td>
+                                                <td style="color: red;font-style: italic;text-align: center;">
+                                                    <input type="checkbox" name="" id="cau1">
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;opacity: 0.6;">
+                                                    <label for="cau2" style="cursor: pointer;">
+                                                        Ban hành quy định quản lý thu hoạch chung xây dựng xã và tổ chức
+                                                        hiện theo quy hoạch
+                                                    </label>
+                                                </td>
+                                                <td style="color: red;font-style: italic;text-align: center;">
+                                                    <input type="checkbox" name="" id="cau2">
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;">
+                                                    Ghi chú: Bị loại nếu sử dụng
+                                                    toàn bộ nguyên liệu nhập
+                                                    khẩu hoặc không rõ nguồn gốc
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            {{!-- 2. Tiêu chí 9 về Nhà ở dân cư: --}}
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;">
+                                                    2). Tiêu chí 9 về Nhà ở dân cư</td>
+                                                <td></td>
+                                                <td style="text-align: center;cursor: pointer;">
+                                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                        title="File đính kèm">
+                                                        <i class="fe fe-file-text icon__file" data-toggle="modal"
+                                                            data-target="#exampleModal"></i>
+                                                    </span>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;opacity: 0.6;">
+                                                    <label for="cau3" style="cursor: pointer;">
+                                                        Nhà không ở tạm , không dột nát
+                                                    </label>
+                                                </td>
+                                                <td style="color: red;font-style: italic;text-align: center;">
+                                                    <input type="checkbox" name="" id="cau3">
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" style="font-weight: 600;color: #333333;opacity: 0.6;">
+                                                    <label for="cau4" style="cursor: pointer;">
+                                                        Tỷ lệ hộ có nhà kiên cố hoặc bán kiên cố
+                                                    </label>
+                                                </td>
+                                                <td style="color: red;font-style: italic;text-align: center; d-flex">
+                                                    <input type="checkbox" name="" id="cau4">
+                                                </td>
+                                                <td>
+                                                    <span style="font-size: 18px; cursor: pointer;"
+                                                        class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                        title="Tỷ lệ hộ có nhà kiên hoặc bán kiên cố >= 90%">
+                                                        <i style="color: red;" class="fe fe-alert-circle"></i>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal__size" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        Viện dẫn</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-bordered table-striped table-hover"
+                                                        border="1">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 20%;">
+                                                                    STT</th>
+                                                                <th style="width: 60%;">
+                                                                    Tên tài liệu
+                                                                </th>
+                                                                <th style="width: 20%;">
+                                                                    Bắt buộc
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    1
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" class="element__hoverRed">
+                                                                        <i class="fe fe-file-text"></i>
+                                                                        <span>
+                                                                            Chứng
+                                                                            nhận
+                                                                            đủ
+                                                                            điều
+                                                                            kiện
+                                                                            sản
+                                                                            xuất
+                                                                            mỹ
+                                                                            phẩm.pdf
+                                                                        </span>
+                                                                    </a>
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    2
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" class="element__hoverRed">
+                                                                        <i class="fe fe-file-text"></i>
+                                                                        <span>
+                                                                            Chứng
+                                                                            nhận
+                                                                            đủ
+                                                                            điều
+                                                                            kiện
+                                                                            ATTP.pdf
+                                                                        </span>
+                                                                    </a>
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary">Save
+                                                        changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

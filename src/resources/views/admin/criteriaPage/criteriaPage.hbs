@@ -1,0 +1,76 @@
+<div class="vertical light ">
+    <div class="wrapper">
+        {{> header}}
+        {{> aside-left}}
+        <main role="main" class="main-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="row my-4">
+                            <!-- Small table -->
+                            <div class="col-md-12">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <!-- table -->
+                                        <div class="table_header">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <button class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#exampleModal">ADD</button>
+                                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                    title="Xem thùng rác">
+                                                    <a style="text-decoration: none;" href="/admin/criteria/trash"><i
+                                                            class="fe fe-trash-2 icon__table-large icon__table-trash"></i></a>
+                                                </span>
+                                            </div>
+                                            {{!-- modal --}}
+                                            {{> modalCriteria}}
+
+                                            <div class="box__input-headerTable">
+                                                <input type="text" class="form-control input-headerTable"
+                                                    placeholder="Tìm kiếm ..">
+                                                <span class="fe fe-14 fe-search iconSearch_headerTable"></span>
+                                            </div>
+                                        </div>
+                                        <table class="datatables table table-bordered">
+                                            <thead style="background-color: #F0F0F0;">
+                                                <tr>
+                                                    <th>Active</th>
+                                                    <th>Code</th>
+                                                    <th>Name</th>
+                                                    <th>Ghi chú</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="active"></div>
+                                                    </td>
+                                                    <td>Imani Lara</td>
+                                                    <td>(478) 446-9234</td>
+                                                    <td>Asset Management</td>
+                                                    <td>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chỉnh sửa">
+                                                            <i data-toggle="modal" data-target="#exampleModal"
+                                                                class="fe fe-edit-3 icon__table icon__table-edit"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Chuyển vào thùng rác">
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- simple table -->
+                        </div> <!-- end section -->
+                    </div> <!-- .col-12 -->
+
+                </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
+        </main> <!-- main -->
+    </div>
+</div>
