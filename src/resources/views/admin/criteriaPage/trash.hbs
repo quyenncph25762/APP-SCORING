@@ -1,0 +1,106 @@
+<div class="vertical light ">
+    <div class="wrapper">
+        {{> header}}
+        {{> aside-left}}
+        <main role="main" class="main-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="row my-4">
+                            <!-- Small table -->
+                            <div class="col-md-12">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <!-- table -->
+                                        <div class="table_header">
+                                            <div class="box__input-headerTable">
+                                                <input type="text" class="form-control input-headerTable"
+                                                    placeholder="Tìm kiếm ..">
+                                                <span class="fe fe-14 fe-search iconSearch_headerTable"></span>
+                                            </div>
+                                            <div class="">
+                                                <button class="btn btn-danger">Xóa tất cả</button>
+                                                <button class="btn btn-primary">Khôi phục tất cả</button>
+                                            </div>
+                                        </div>
+                                        <table class="datatables table table-bordered">
+                                            <thead style="background-color: #F0F0F0;">
+                                                <tr>
+                                                    <th>
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" class="check" id="checkAll">
+                                                        </div>
+                                                    </th>
+                                                    <th>Active</th>
+                                                    <th>Code</th>
+                                                    <th>Name</th>
+                                                    <th>Ghi chú</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="check">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="active"></div>
+                                                    </td>
+                                                    <td>Imani Lara</td>
+                                                    <td>(478) 446-9234</td>
+                                                    <td>Asset Management</td>
+                                                    <td>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Khôi phục">
+                                                            <i style="color:rgb(24, 100, 213);"
+                                                                class="fe fe-refresh-ccw icon__table"></i>
+                                                        </span>
+                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                            title="Xóa">
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- simple table -->
+                        </div> <!-- end section -->
+                    </div> <!-- .col-12 -->
+
+                </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
+        </main> <!-- main -->
+    </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+    // checkbox All
+    $("#checkAll").click(function () {
+        $(".check").prop('checked', $(this).prop('checked'));
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>

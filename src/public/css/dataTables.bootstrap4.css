@@ -290,6 +290,13 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
   margin: 0 8px;
 }
 
+.icon__table-large {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 16px;
+
+}
+
 .icon__table-success {
   color: rgb(13, 187, 13);
 }
@@ -308,12 +315,14 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 .icon__table-trash {
   color: red;
   cursor: context-menu;
+  padding: 4px;
+  cursor: pointer;
 }
 
 
 
 .modal__size {
-  min-width: 800px !important;
+  min-width: 900px !important;
   margin-left: auto;
   margin-right: auto;
 }
@@ -564,4 +573,27 @@ select {
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+}
+
+.subHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-top: 1px #ccc solid;
+  padding: 16px 0;
+}
+
+.note_markPage {
+  font-size: 14px;
+  color: #777;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.point {
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+  width: 70px;
+  text-align: center;
 }

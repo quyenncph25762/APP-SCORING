@@ -1,4 +1,6 @@
-<div class="vertical light ">
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+<div class="vertical light">
     <div class="wrapper">
         {{> header}}
         {{> aside-left}}
@@ -6,8 +8,6 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <h2 class="mb-2 page-title">Hồ sơ sản phẩm</h2>
-                        <p class="card-text">Danh sách hồ sơ sản phẩm. </p>
                         <div class="row my-4">
                             <!-- Small table -->
                             <div class="col-md-12">
@@ -26,7 +26,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <p>Nhóm sản phẩm</p>
+                                                    <p>Lọc theo đối tượng</p>
                                                     <select class="form-control" name="" id="">
                                                         <option value="" selected>Tất cả</option>
                                                         <option value="">Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành phần từ
@@ -52,11 +52,8 @@
                                                             <input type="checkbox" class="check" id="checkAll">
                                                         </div>
                                                     </th>
-                                                    <th></th>
-                                                    <th style="min-width: 400px;">
-                                                        Name</th>
-                                                    <th>Nhóm sản phẩm</th>
-                                                    <th>Xếp hạng OCOP</th>
+                                                    <th style="min-width: 300px;">Name</th>
+                                                    <th>Đối tượng</th>
                                                     <th>Năm đánh giá</th>
                                                     <th>Chủ thể</th>
                                                     <th>Ghi chú</th>
@@ -71,16 +68,11 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img style="width: 50px; height: 50px;object-fit: cover;"
-                                                            src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
-                                                            alt=""></td>
                                                     <td>
                                                         <ul style="list-style-type: none;font-weight: 600;">
                                                             <!-- name product -->
                                                             <li data-toggle="modal" data-target="#exampleModal"></li>
-                                                            <p class="nameProduct">
-                                                                DƯỠNG DA 123
-                                                                PLUS +</p>
+                                                            <p class="nameProduct">104: Từ Sơn tỉnh Bắc Ninh</p>
                                                             </li>
                                                             <!-- modal -->
                                                             <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -154,229 +146,13 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- name company -->
-                                                            <li style="opacity: 0.6;">CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB
-                                                                GROUP</li>
                                                         </ul>
                                                     </td>
                                                     <!-- product group -->
                                                     <td>Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
                                                         phần từ Thảo dược</td>
-                                                    <td></td>
                                                     <!-- nam thanh lap -->
-                                                    <td>2021</td>
-                                                    <td>CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB GROUP</td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox" class="check">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><img style="width: 50px; height: 50px;object-fit: cover;"
-                                                            src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
-                                                            alt=""></td>
-                                                    <td>
-                                                        <ul style="list-style-type: none;font-weight: 600;">
-                                                            <!-- name product -->
-                                                            <li data-toggle="modal" data-target="#exampleModal"></li>
-                                                            <p class="nameProduct">
-                                                                DƯỠNG DA 123
-                                                                PLUS +</p>
-                                                            </li>
-                                                            <!-- modal -->
-                                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                                role="dialog" aria-labelledby="exampleModalLabel"
-                                                                aria-hidden="true">
-                                                                <div class="modal-dialog modal__size" role="document">
-                                                                    <div class="modal-content model__content">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title"
-                                                                                id="exampleModalLabel">Thêm mới
-                                                                            </h5>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body" class="width: 100%">
-                                                                            <form>
-                                                                                <div class="form-row">
-                                                                                    <div class="col-md-4 mb-3">
-                                                                                        <label
-                                                                                            for="validationDefault01">Mã</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault01"
-                                                                                            placeholder="First name"
-                                                                                            value="Mark" required>
-                                                                                    </div>
-                                                                                    <div class="col-md-5 mb-3">
-                                                                                        <label
-                                                                                            for="validationDefault02">Tên
-                                                                                            nhóm
-                                                                                            sản phẩm</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault02"
-                                                                                            placeholder="Last name"
-                                                                                            value="Otto" required>
-                                                                                    </div>
-                                                                                    <div class="custom-control custom-switch col-md-3"
-                                                                                        style="display: flex; justify-content: center;align-items: center;">
-                                                                                        <input type="checkbox"
-                                                                                            class="custom-control-input"
-                                                                                            id="customSwitch1">
-                                                                                        <label
-                                                                                            class="custom-control-label block"
-                                                                                            for="customSwitch1">Áp
-                                                                                            dụng</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-12 mb-3 mt-3">
-                                                                                        <label
-                                                                                            for="validationDefault02">Ghi
-                                                                                            chú</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault02"
-                                                                                            placeholder="Last name"
-                                                                                            value="Otto" required>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary"
-                                                                                data-dismiss="modal">Close</button>
-                                                                            <button type="button"
-                                                                                class="btn btn-primary">Save
-                                                                                changes</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- name company -->
-                                                            <li style="opacity: 0.6;">CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB
-                                                                GROUP</li>
-                                                        </ul>
-                                                    </td>
-                                                    <!-- product group -->
-                                                    <td>Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
-                                                        phần từ Thảo dược</td>
-                                                    <td></td>
-                                                    <!-- nam thanh lap -->
-                                                    <td>2021</td>
-                                                    <td>CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB GROUP</td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox" class="check">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><img style="width: 50px; height: 50px;object-fit: cover;"
-                                                            src="https://csdl.ocopthaibinh.vn/Common/Images/default-image.png"
-                                                            alt=""></td>
-                                                    <td>
-                                                        <ul style="list-style-type: none;font-weight: 600;">
-                                                            <!-- name product -->
-                                                            <li data-toggle="modal" data-target="#exampleModal"></li>
-                                                            <p class="nameProduct">
-                                                                DƯỠNG DA 123
-                                                                PLUS +</p>
-                                                            </li>
-                                                            <!-- modal -->
-                                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                                role="dialog" aria-labelledby="exampleModalLabel"
-                                                                aria-hidden="true">
-                                                                <div class="modal-dialog modal__size" role="document">
-                                                                    <div class="modal-content model__content">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title"
-                                                                                id="exampleModalLabel">Thêm mới
-                                                                            </h5>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body" class="width: 100%">
-                                                                            <form>
-                                                                                <div class="form-row">
-                                                                                    <div class="col-md-4 mb-3">
-                                                                                        <label
-                                                                                            for="validationDefault01">Mã</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault01"
-                                                                                            placeholder="First name"
-                                                                                            value="Mark" required>
-                                                                                    </div>
-                                                                                    <div class="col-md-5 mb-3">
-                                                                                        <label
-                                                                                            for="validationDefault02">Tên
-                                                                                            nhóm
-                                                                                            sản phẩm</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault02"
-                                                                                            placeholder="Last name"
-                                                                                            value="Otto" required>
-                                                                                    </div>
-                                                                                    <div class="custom-control custom-switch col-md-3"
-                                                                                        style="display: flex; justify-content: center;align-items: center;">
-                                                                                        <input type="checkbox"
-                                                                                            class="custom-control-input"
-                                                                                            id="customSwitch1">
-                                                                                        <label
-                                                                                            class="custom-control-label block"
-                                                                                            for="customSwitch1">Áp
-                                                                                            dụng</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-12 mb-3 mt-3">
-                                                                                        <label
-                                                                                            for="validationDefault02">Ghi
-                                                                                            chú</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="validationDefault02"
-                                                                                            placeholder="Last name"
-                                                                                            value="Otto" required>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary"
-                                                                                data-dismiss="modal">Close</button>
-                                                                            <button type="button"
-                                                                                class="btn btn-primary">Save
-                                                                                changes</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- name company -->
-                                                            <li style="opacity: 0.6;">CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB
-                                                                GROUP</li>
-                                                        </ul>
-                                                    </td>
-                                                    <!-- product group -->
-                                                    <td>Nhóm 19: Bộ sản phẩm: Mỹ phẩm có thành
-                                                        phần từ Thảo dược</td>
-                                                    <td></td>
-                                                    <!-- nam thanh lap -->
-                                                    <td>2021</td>
+                                                    <td style="font-weight: 600;">2021</td>
                                                     <td>CÔNG TY TNHH DƯỢC PHẨM QUỐC TẾ TTB GROUP</td>
                                                     <td>
                                                     </td>
@@ -393,3 +169,29 @@
         </main> <!-- main -->
     </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+    // checkbox All
+    $("#checkAll").click(function () {
+        $(".check").prop('checked', $(this).prop('checked'));
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
