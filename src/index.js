@@ -17,4 +17,4 @@ app.set("view engine", 'hbs')
 app.set('views', path.join(__dirname, "resources\\views"))
 route(app)
 
-app.listen(3000, console.log(`http://localhost:300000000000`))
+app.listen(3000, console.log(`http://localhost:3001`))
