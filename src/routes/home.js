@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const SubjectControllers = require("../app/controllers/SubjectControllers")
+const SearchFileControllers = require("../app/controllers/SearchFileControllers")
 
-
-router.get("/", SubjectControllers.index)
+router.get("/", SearchFileControllers.index)
 module.exports = router

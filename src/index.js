@@ -4,9 +4,11 @@ const handlebars = require("express-handlebars")
 const path = require("path")
 const bodyParser = require("body-parser")
 const route = require("./routes")
-app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
+
 app.engine("hbs", handlebars.engine({
     extname: ".hbs"
 }))
@@ -17,4 +19,4 @@ app.set("view engine", 'hbs')
 app.set('views', path.join(__dirname, "resources\\views"))
 route(app)
 
-app.listen(3000, console.log(`http://localhost:3001`))
+app.listen(3000, console.log(`http://localhost:3000`))

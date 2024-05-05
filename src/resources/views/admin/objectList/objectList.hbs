@@ -16,6 +16,10 @@
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button class="btn btn-primary" data-toggle="modal"
                                                     data-target="#exampleModal">ADD</button>
+                                                {{> modalObjectList}}
+
+                                                <button class="btn btn-danger btnDeleteAll ml-3">Xóa mục đã
+                                                    chọn</button>
                                                 <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
                                                     title="Xem thùng rác">
                                                     <a style="text-decoration: none;" href="/admin/objectList/trash"><i
@@ -23,7 +27,6 @@
                                                 </span>
                                             </div>
                                             {{!-- modal --}}
-                                            {{> modalObjectList}}
                                             <div class="box__input-headerTable">
                                                 <input type="text" class="form-control input-headerTable"
                                                     placeholder="Tìm kiếm ..">
@@ -33,6 +36,11 @@
                                         <table class="datatables table table-bordered">
                                             <thead style="background-color: #F0F0F0;">
                                                 <tr>
+                                                    <th>
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" class="check" id="checkAll">
+                                                        </div>
+                                                    </th>
                                                     <th>Active</th>
                                                     <th>Code</th>
                                                     <th>Tên vùng</th>
@@ -41,25 +49,47 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {{#each Customer}}
                                                 <tr>
                                                     <td>
-                                                        <div class="active"></div>
+                                                        <div class="">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="check"
+                                                                    data-idCheckBox="{{this._id}}">
+                                                            </div>
+                                                        </div>
                                                     </td>
-                                                    <td>HXQSDDSA</td>
-                                                    <td>Xã nông thôn mới</td>
-                                                    <td></td>
                                                     <td>
-                                                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                                                        {{#if this.status}}
+                                                        <div class="active"></div>
+                                                        {{else}}
+                                                        <div class="inactive"></div>
+                                                        {{/if}}
+                                                    </td>
+                                                    <td>{{this.code}}</td>
+                                                    <td>{{this.customerName}}</td>
+                                                    <td>
+                                                        {{#if this.note}}
+                                                        {{this.note}}
+                                                        {{/if}}
+                                                    </td>
+                                                    <td>
+                                                        <button style="border: none;background-color: transparent;"
+                                                            class="d-inline-block" tabindex="0" data-toggle="tooltip"
                                                             title="Chỉnh sửa">
-                                                            <i data-toggle="modal" data-target="#exampleModal"
+                                                            <i data-toggle="modal"
+                                                                data-target="#exampleModal{{this._id}}"
                                                                 class="fe fe-edit-3 icon__table icon__table-edit"></i>
-                                                        </span>
+                                                        </button>
+                                                        {{> modalObjectList}}
                                                         <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
                                                             title="Chuyển vào thùng rác">
-                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"
+                                                                id="icon_moveToTrash" data-id="{{this._id}}"></i>
                                                         </span>
                                                     </td>
                                                 </tr>
+                                                {{/each}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -72,3 +102,55 @@
         </main> <!-- main -->
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+    // checkbox All
+    $("#checkAll").click(function (e) {
+        $(".check").prop('checked', $(this).prop('checked'));
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
+
+<script>
+    const btnTrash = document.querySelectorAll("#icon_moveToTrash");
+    for (let btn of btnTrash) {
+        btn.addEventListener("click", (event) => {
+            const isRemove = window.confirm("Are u sure deleted ?")
+            if (isRemove) {
+                const id = event.target.dataset.id
+                fetch(`/admin/objectList/removeToTrash/${id}`, {
+                    method: "DELETE"
+                })
+                alert("Xóa thành công")
+                window.location.reload()
+            }
+        })
+    }
+    //removebyCheckBox
+    const btnsCheck = document.querySelectorAll(".check")
+    const btnDeleteAll = document.querySelector(".btnDeleteAll")
+
+    btnDeleteAll.addEventListener("click", async (e) => {
+        const isConfirmDeleteByCheckbox = window.confirm("Xác nhận xóa những đối tượng bạn đã chọn ?")
+        if (isConfirmDeleteByCheckbox) {
+            for (let btnCheck of btnsCheck) {
+                if (btnCheck.checked) {
+                    const id = btnCheck.dataset.idcheckbox
+                    fetch(`/admin/objectList/removeToTrash/${id}`, {
+                        method: "DELETE"
+                    })
+                }
+            }
+            alert("Xóa thành công!")
+            window.location.reload()
+        }
+    })
+</script>

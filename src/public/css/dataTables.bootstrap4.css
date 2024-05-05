@@ -336,6 +336,13 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
   background: #1BC5BD;
 }
 
+.inactive {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
 .approved {
   background: #1BC5BD;
   border-radius: 10px;

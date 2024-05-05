@@ -13,14 +13,18 @@
                                     <div class="card-body">
                                         <!-- table -->
                                         <div class="table_header">
-                                            <div class="box__input-headerTable">
+                                            <div class="box__input-headerTable d-flex align-items-center">
+                                                <a style="color: black;margin-right: 8px;color: #777"
+                                                    href="/admin/objectList"><i class="fe fe-chevrons-left"></i>Trở
+                                                    lại</a>
                                                 <input type="text" class="form-control input-headerTable"
                                                     placeholder="Tìm kiếm ..">
                                                 <span class="fe fe-14 fe-search iconSearch_headerTable"></span>
                                             </div>
                                             <div class="">
-                                                <button class="btn btn-danger">Xóa tất cả</button>
-                                                <button class="btn btn-primary">Khôi phục tất cả</button>
+                                                <button class="btn btn-danger btnDeleteAll">Xóa mục đã chọn</button>
+                                                <button class="btn btn-primary btnRevertAll">Khôi phục mục đã
+                                                    chọn</button>
                                             </div>
                                         </div>
                                         <table class="datatables table table-bordered">
@@ -39,32 +43,41 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {{#each Customer}}
                                                 <tr>
                                                     <td>
                                                         <div class="">
                                                             <div class="checkbox">
-                                                                <input type="checkbox" class="check">
+                                                                <input type="checkbox" class="check"
+                                                                    data-idCheckBox="{{this._id}}">
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="active"></div>
                                                     </td>
-                                                    <td>HXQSDDSA</td>
-                                                    <td>Xã nông thôn mới</td>
-                                                    <td></td>
+                                                    <td>{{this.code}}</td>
+                                                    <td>{{this.customerName}}</td>
+                                                    <td>
+                                                        {{#if this.note}}
+                                                        {{this.note}}
+                                                        {{/if}}
+                                                    </td>
                                                     <td>
                                                         <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
                                                             title="Khôi phục">
                                                             <i style="color:rgb(24, 100, 213);"
-                                                                class="fe fe-refresh-ccw icon__table"></i>
+                                                                class="fe fe-refresh-ccw icon__table" id="icon_revert"
+                                                                data-id="{{this._id}}"></i>
                                                         </span>
                                                         <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
                                                             title="Xóa">
-                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"></i>
+                                                            <i class="fe fe-trash-2 icon__table icon__table-trash"
+                                                                id="icon_delete" data-id="{{this._id}}"></i>
                                                         </span>
                                                     </td>
                                                 </tr>
+                                                {{/each}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -98,8 +111,79 @@
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
     // checkbox All
-    $("#checkAll").click(function () {
+    $("#checkAll").click(function (e) {
         $(".check").prop('checked', $(this).prop('checked'));
     });
 </script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
+
+<script>
+    const btnTrash = document.querySelectorAll("#icon_delete");
+    const btnReverts = document.querySelectorAll("#icon_revert")
+    //RemoveOne
+    for (let btn of btnTrash) {
+        btn.addEventListener("click", (event) => {
+            const isRemove = window.confirm("Are u sure deleted ?")
+            if (isRemove) {
+                const id = event.target.dataset.id
+                fetch(`/admin/objectList/remove/${id}`, {
+                    method: "DELETE"
+                })
+                alert("Xóa thành công")
+                window.location.reload()
+            }
+        })
+    }
+    //RevertOne
+    for (let btnRevert of btnReverts) {
+        btnRevert.addEventListener("click", async (event) => {
+            const isRemove = window.confirm("Khôi phục đối tượng này ?")
+            if (isRemove) {
+                const id = event.target.dataset.id
+                await fetch(`/admin/objectList/revert/${id}`, {
+                    method: "PATCH"
+                })
+                window.location.reload()
+            }
+        })
+    }
+    //RemoveByCheckBox
+    const btnsCheck = document.querySelectorAll(".check")
+    const btnDeleteAll = document.querySelector(".btnDeleteAll")
+
+    btnDeleteAll.addEventListener("click", async (e) => {
+        console.log(ArrId)
+        const isConfirmDeleteByCheckbox = window.confirm("Xác nhận xóa những đối tượng bạn đã chọn ?")
+        if (isConfirmDeleteByCheckbox) {
+            for (let btnCheck of btnsCheck) {
+                if (btnCheck.checked) {
+                    const id = btnCheck.dataset.idcheckbox
+                    fetch(`/admin/objectList/remove/${id}`, {
+                        method: "DELETE"
+                    })
+                }
+            }
+            alert("Xóa thành công!")
+            window.location.reload()
+        }
+    })
+    //RevertByCheckBox
+    const btnRevertAll = document.querySelector(".btnRevertAll")
+    btnRevertAll.addEventListener("click", async (e) => {
+        const isConfirmRevertByCheckbox = window.confirm("Xác nhận khôi phục những đối tượng bạn đã chọn ?")
+        if (isConfirmRevertByCheckbox) {
+            for (let btnCheck of btnsCheck) {
+                if (btnCheck.checked) {
+                    const id = btnCheck.dataset.idcheckbox
+                    fetch(`/admin/objectList/revert/${id}`, {
+                        method: "PATCH"
+                    })
+                }
+            }
+            alert("Khôi phục thành công!")
+            window.location.reload()
+        }
+    })
+</script>
