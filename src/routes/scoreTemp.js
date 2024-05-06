@@ -1,11 +1,14 @@
 const express = require("express")
-const ScoreTempControllers = require("../app/controllers/admin/ScoreTempControllers")
 const router = express.Router()
+const ScoreTempControllers = require("../app/controllers/admin/ScoreTempControllers")
 
 router.get("/", ScoreTempControllers.index)
-// add
+// addPage
 router.get("/add", ScoreTempControllers.add)
+// add
+router.post("/addScoreTemp", ScoreTempControllers.addScoreTemp)
 // xoa mem
 router.get("/trash", ScoreTempControllers.deleteScoreTempToTrash)
+
 
 module.exports = router
